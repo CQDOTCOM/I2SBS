@@ -88,6 +88,222 @@ a:hover, a:focus {
   color: #000000;
 }
 
+/* bootstrap modal*/
+
+.modal-dialog {
+  width: 100%;
+  padding: 0;
+  left: 8px;
+  max-width: 100%;
+}
+
+.modal-content {
+  height: 100%;
+  border-radius: 0;
+}
+.modal-body {
+  text-align: center;
+  align-content: center;
+  font-family: Arial,Helvetica,sans-serif;
+  border: 50px;
+}
+.modal-body h1, h2 {
+  font-size: 3em !important;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.modal-body p {
+  margin-bottom: 60px;
+}
+.modal-body > ul {
+  display: inline-block;
+}
+li {
+  text-align: left;
+}
+.modal-backdrop.show {
+    opacity: 0.8;
+    /* z-index: -1; */
+}
+
+.modal-text {
+  color: red;
+  text-align: center;
+}
+.robot-speech{
+position: relative;
+}
+.robot-img {
+  /* background: red; */
+  float: left;
+  margin-left: 5%;
+  margin-top: 5%;
+  /* max-width: 20%; */
+}
+
+.speech-bubble {
+  float: right;
+  margin-right: 5%;
+  margin-top: 5%;
+	/* background: #259be2; */
+	border-radius: 0.3em;
+  /* max-width: 50%; */
+}
+
+.bpm-h4{
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.bpm-ul{
+  display: inline-block;
+}
+
+.carousel-inner{
+  max-width: 1200px;
+  max-height: 600px;
+}
+
+#carouselExampleSlidesOnlyz {
+
+  /* position: absolute; */
+/* width: 300px;
+height: 200px; */
+z-index: 15;
+margin-left: 13%;
+/* top: 50%;
+left: 50%; */
+/* margin: -100px 0 0 -150px; */
+
+}
+
+.carousel-inner .carousel-item img {
+  width: auto;
+  height: 400px;
+  max-height: auto;
+  display: flex;
+  max-width:: 10% !important;
+  max-height: 10% !important;
+  object-fit: contain;
+}
+
+.carousel-indicators li {
+  background-color: #999;
+  background-color: rgba(70,70,70,.25);
+}
+
+.carousel-indicators .active {
+  background-color: #444;
+}
+.carousel-control-prev-icon
+{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+/* circles */
+
+.card{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+  max-height: 90%;
+}
+
+.card p {
+font-family: Nunito; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+/* margin-left: -30%; */
+padding: 50px;
+}
+
+.card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card h3{
+  font-weight: 600;
+}
+
+.card img{
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  max-height: 1px;
+}
+
+.card-1{
+  background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-2{
+   background-image: url(https://ionicframework.com/img/getting-started/components-card.png);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-3{
+   background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+.card-4{
+   background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+@media(max-width: 990px){
+  .card{
+    margin: 20px;
+  }
+}
+
+/* .test {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: #ffd;
+}
+
+@media (max-width: 600px) {
+  .test {
+    flex-direction: column;
+  }
+} */
+
+/*  end circles*/
+
+/* .speech-bubble:after {
+  float: right;
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 3em solid transparent;
+	border-right-color: #259be2;
+	border-left: 0;
+	margin-top: -1.9em;
+	margin-left: -1.5em;
+} */
+
+/* bootstrap modal end*/
+
+
 
 /* ===================================================================
  *  03. typography & general theme styles - (_document-setup.scss)
@@ -336,7 +552,7 @@ ul.disc li::before {
   position: absolute;
   left: -17px;
   top: 11px;
-  vertical-align: middle;
+  vertical-align: dle;
 }
 
 dt {
@@ -1274,6 +1490,37 @@ header .header-logo a {
   transition: all 0.5s ease-in-out;
 }
 
+.datascience-images img{
+  display: inline;
+max-width: 46%;
+margin-left: -40px;
+}
+
+/* slide for data science */
+#slide{
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size:contain;
+      object-fit:fill;
+    position:fixed;
+    max-width: 100%;
+    max-height: 100%;
+    width: 98%;
+    height: 40%;
+}
+.slide1{
+      background: url(../images/portfolio/datascience1.jpg) no-repeat center center;
+
+    }
+.slide2{
+      background: url(../images/portfolio/datascience2.jpg) no-repeat center center fixed;
+    }
+.slide3{
+      background: url(../images/portfolio/datascience3.jpg) no-repeat center center fixed;
+    }
+/* end slide for datascience */
+
 /* -------------------------------------------------------------------
  * menu trigger - (_layout.css)
  * ------------------------------------------------------------------- */
@@ -1511,6 +1758,7 @@ header .header-logo a {
   position: fixed;
   right: 0;
   bottom: 0;
+  object-fit: cover;
   min-width: 100%;
   min-height: 100%;
   z-index: -80000;
@@ -2034,6 +2282,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 #portfolio .portfolio-content {
   margin-top: -22.2rem;
+  z-index: -1;
 }
 #portfolio .bricks-wrapper:before,
 #portfolio .bricks-wrapper:after {
@@ -2059,6 +2308,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 .bricks-wrapper .item-wrap {
   position: relative;
   overflow: hidden;
+  z-index: 2;
 }
 .bricks-wrapper .item-wrap .overlay {
   cursor: zoom-in;
@@ -2247,6 +2497,17 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   font-family: "montserrat-regular", sans-serif;
 }
 
+.blue {
+color: blue !important;
+}
+
+.green {
+    color: green !important;
+}
+
+.red {
+  color: red !important;
+}
 /* -------------------------------------------------------------------
  * responsive:
  * portfolio
@@ -2321,7 +2582,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   content: '\201D';
 }
 #testimonial-slider .testimonial-author {
-  margin-top: 4.2rem;
+  margin-top: 1.8rem;
 }
 #testimonial-slider .testimonial-author img {
   width: 7.4rem;
