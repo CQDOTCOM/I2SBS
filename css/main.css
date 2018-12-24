@@ -204,17 +204,93 @@ left: 50%; */
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 
+
+
+/* test card carousel */
+
+@media (min-width: 768px) {
+  /* show 3 items */
+  .carousel-inner .active,
+  .carousel-inner .active + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item {
+    display: block !important;
+  }
+
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+    transition: none !important;
+  }
+
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    position: relative !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: absolute !important;
+    top: 0 !important;
+    right: -33.3333% !important;
+    z-index: -1 !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* left or forward direction */
+  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  .carousel-item-next.carousel-item-left + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+    position: relative !important;
+    transform: translate3d(-100%, 0, 0) !important;
+    visibility: visible !important;
+  }
+
+  /* farthest right hidden item must be abso position for animations */
+  .carousel-inner .carousel-item-prev.carousel-item-right {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: -1 !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* right or prev direction */
+  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+  .carousel-item-prev.carousel-item-right + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+    position: relative !important;
+    transform: translate3d(100%, 0, 0) !important;
+    visibility: visible !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+}
+
+
+
+
+
 /* circles */
 
-.another-card{
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-  padding: 14px 80px 18px 36px;
-  cursor: pointer;
-  max-height: 90%;
+.card-img-top {
+object-fit: fill;
 }
+
+.card-img-tops {
+  max-width: 20%;
+  max-height: 20%;
+}
+
+.card-block{
+/* height: 180px; */
+font-size: 12px;
+min-height: 196px;
+}
+
 
 .card p {
 font-family: Nunito; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
@@ -231,25 +307,32 @@ padding: 50px;
   font-weight: 600;
 }
 
-.card img{
+/* .card img{
   position: absolute;
   top: 20px;
   right: 15px;
   max-height: 1px;
-}
+} */
+
+
+
+
 
 .card-1{
   background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
       background-repeat: no-repeat;
     background-position: right;
     background-size: 80px;
+    height: 80%;
 }
+
 
 .card-2{
    background-image: url(https://ionicframework.com/img/getting-started/components-card.png);
       background-repeat: no-repeat;
     background-position: right;
     background-size: 80px;
+    height: 80%;
 }
 
 .card-3{
@@ -257,13 +340,16 @@ padding: 50px;
       background-repeat: no-repeat;
     background-position: right;
     background-size: 80px;
+    height: 80%;
 }
 .card-4{
    background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
       background-repeat: no-repeat;
     background-position: right;
     background-size: 80px;
+    height: 80%;
 }
+
 
 @media(max-width: 990px){
   .card{
@@ -953,7 +1039,39 @@ input[type="button"] {
   -webkit-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  display: none;
 }
+
+
+/* test test*/
+
+.row-equal .card {
+   width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active,
+.carousel-inner>.row-equal.next,
+.carousel-inner>.row-equal.prev {
+    display: flex;
+}
+
+/* prevent flicker during transition */
+.carousel-inner>.row-equal.active.left,
+.carousel-inner>.row-equal.active.right {
+    opacity: 0.5;
+    display: flex;
+}
+
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 550px;
+    overflow:hidden;
+    object-fit:fill;
+}
+
+
 
 .button:hover,
 a.button:hover,

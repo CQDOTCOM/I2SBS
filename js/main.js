@@ -101,6 +101,33 @@
 
   };
 
+  /* Test */
+
+  var ssCardCarousel = function() {
+    $("#myCarousel").on("slide.bs.carousel", function(e) {
+      var $e = $(e.relatedTarget);
+      var idx = $e.index();
+      var itemsPerSlide = 3;
+      var totalItems = $(".carousel-item").length;
+      console.log("hi")
+
+      if (idx >= totalItems - (itemsPerSlide - 1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i = 0; i < it; i++) {
+          // append slides to end
+          if (e.direction == "left") {
+            $(".carousel-item")
+              .eq(i)
+              .appendTo(".carousel-inner");
+          } else {
+            $(".carousel-item")
+              .eq(0)
+              .appendTo($(this).find(".carousel-inner"));
+          }
+        }
+      }
+    })
+  }
 
   /* Carousel
    * ------------------------------------------------------ */
@@ -220,6 +247,7 @@
   };
 
 
+
   /* Alert Boxes
   ------------------------------------------------------- */
   var ssAlertBoxes = function() {
@@ -229,6 +257,47 @@
     });
 
   };
+
+	/* slick test */
+	var slickTest = function() {
+
+
+	$('.responsive').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+};
 
 
   /* Animations
@@ -344,6 +413,29 @@
     });
   };
 
+	/*owl
+	*/
+	var owlcarousel = function() {
+		$('.owl-carousel').owlCarousel({
+		    loop:true,
+		    margin:10,
+		    nav:true,
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        600:{
+		            items:3
+		        },
+		        1000:{
+		            items:5
+		        }
+		    }
+		})
+	}
+
+
+
 
   /* AjaxChimp
    * ------------------------------------------------------ */
@@ -398,17 +490,22 @@
     });
   };
 
-	$('.flip').hover(function(){
-        $(this).find('.card').toggleClass('flipped');
+  $('.flip').hover(function() {
+    $(this).find('.card').toggleClass('flipped');
 
- });
-
- $(function () {
-    $('.fadein div:gt(0)').hide();
-    setInterval(function () {
-      $('.fadein :first-child').fadeOut().next('div').fadeIn().end().appendTo('.fadein');
-     }, 5000);
   });
+
+  $(function() {
+    $('.fadein div:gt(0)').hide();
+    setInterval(function() {
+      $('.fadein :first-child').fadeOut().next('div').fadeIn().end().appendTo('.fadein');
+    }, 5000);
+  });
+
+
+
+
+
 
 
 
@@ -432,6 +529,9 @@
     ssContactForm();
     ssAjaxChimp();
     ssBackToTop();
+    ssCardCarousel();
+		slickTest();
+		owlcarousel();
 
 
   })();
